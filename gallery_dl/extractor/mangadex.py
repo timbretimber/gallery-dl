@@ -20,7 +20,7 @@ class MangadexExtractor(Extractor):
     category = "mangadex"
     directory_fmt = (
         "{category}", "{manga}",
-        "{volume:?v/ />02}c{chapter:>03}{chapter_minor}{title:?: //}")
+        '\fE (f"v{volume:02} " if volume is not None else "") + (f"c{chapter:03}{chapter_minor}") + (f" {title}" if title else "")')
     filename_fmt = (
         "{manga}_c{chapter:>03}{chapter_minor}_{page:>03}.{extension}")
     archive_fmt = "{chapter_id}_{page}"
