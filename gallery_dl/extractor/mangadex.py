@@ -65,7 +65,7 @@ class MangadexExtractor(Extractor):
         return {
             **self.cache(self._manga_info, relationships["manga"][0]["id"]),
             "title"   : cattributes["title"],
-            "volume"  : text.parse_int(cattributes["volume"]),
+            "volume"  : text.parse_int(cattributes["volume"], None),
             "chapter" : text.parse_int(chnum),
             "chapter_minor": sep + minor,
             "chapter_id": chapter["id"],
